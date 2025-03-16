@@ -1,32 +1,31 @@
 const express = require("express");
-const path = require("path");
+const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 4000;
 
+// Middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(cors());
 
-// Configurar el motor de plantillas EJS
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "ejs");
+// Servir archivos estáticos desde la carpeta "public"
+app.use(express.static("public"));
 
-// Aquí defines tus rutas de API (como /proyectos, /fases, etc.)
+// Importar rutas
 const proyectosRoutes = require("./routes/proyectos");
 const fasesRoutes = require("./routes/fases");
 const actividadesRoutes = require("./routes/actividades");
 const tareasRoutes = require("./routes/tareas");
 const responsablesRoutes = require("./routes/responsables");
 
+// Usar rutas
 app.use("/proyectos", proyectosRoutes);
 app.use("/fases", fasesRoutes);
 app.use("/actividades", actividadesRoutes);
 app.use("/tareas", tareasRoutes);
 app.use("/responsables", responsablesRoutes);
 
-// Ruta principal para renderizar la interfaz web
 app.get("/", (req, res) => {
-    res.render("index");
+    res.send("¡Servidor funcionando!");
 });
 
 app.listen(PORT, () => {
