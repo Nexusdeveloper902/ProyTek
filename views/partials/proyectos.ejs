@@ -1,0 +1,27 @@
+<div class="section" id="projectsSection">
+    <h2>Proyectos</h2>
+    <!-- Formulario para crear proyecto -->
+    <form id="projectForm">
+        <label>Nombre: <input type="text" id="p_nombre" required></label>
+        <label>Descripción: <input type="text" id="p_descripcion"></label>
+        <label>Fecha inicio: <input type="date" id="p_fecha_inicio"></label>
+        <label>Fecha fin: <input type="date" id="p_fecha_fin"></label>
+        <button type="submit">Crear Proyecto</button>
+    </form>
+    <button id="loadProjects">Cargar Proyectos</button>
+    <ul id="projectList"></ul>
+
+    <!-- Formulario para editar proyecto (oculto) -->
+    <div id="editProjectContainer" class="hidden">
+        <h3>Editar Proyecto</h3>
+        <form id="editProjectForm">
+            <input type="hidden" id="edit_project_id">
+            <label>Nombre: <input type="text" id="edit_p_nombre" required></label>
+            <label>Descripción: <input type="text" id="edit_p_descripcion"></label>
+            <label>Fecha inicio: <input type="date" id="edit_p_fecha_inicio"></label>
+            <label>Fecha fin: <input type="date" id="edit_p_fecha_fin"></label>
+            <button type="submit">Guardar Cambios</button>
+            <button type="button" onclick="cancelEditProject()">Cancelar</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="section" id="responsablesSection">
+    <h2>Responsables</h2>
+    <form id="responsableForm">
+        <label>Cédula: <input type="text" id="r_cedula" required></label>
+        <label>Nombre: <input type="text" id="r_nombre" required></label>
+        <label>Correo: <input type="email" id="r_correo" required></label>
+        <button type="submit">Crear Responsable</button>
+    </form>
+    <button id="loadResponsables">Cargar Responsables</button>
+    <ul id="responsableList"></ul>
+
+    <!-- Formulario para editar responsable (oculto) -->
+    <div id="editResponsableContainer" class="hidden">
+        <h3>Editar Responsable</h3>
+        <form id="editResponsableForm">
+            <input type="hidden" id="edit_responsable_id">
+            <label>Cédula: <input type="text" id="edit_r_cedula" required></label>
+            <label>Nombre: <input type="text" id="edit_r_nombre" required></label>
+            <label>Correo: <input type="email" id="edit_r_correo" required></label>
+            <button type="submit">Guardar Cambios</button>
+            <button type="button" onclick="cancelEditResponsable()">Cancelar</button>
+        </form>
+    </div>
+</div>

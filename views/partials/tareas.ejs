@@ -1,0 +1,60 @@
+<div class="section" id="tareasSection">
+    <h2>Tareas</h2>
+    <!-- Dropdown para seleccionar Actividad al crear tarea -->
+    <label>Actividad para Tarea:
+        <select id="tarea_actividad_select" required>
+            <option value="">-- Seleccionar Actividad --</option>
+        </select>
+    </label>
+    <!-- Dropdown para seleccionar Responsable al crear tarea -->
+    <label>Responsable:
+        <select id="tarea_responsable_select" required>
+            <option value="">-- Seleccionar Responsable --</option>
+        </select>
+    </label>
+    <form id="tareaForm">
+        <label>Nombre: <input type="text" id="tarea_nombre" required></label>
+        <label>Descripción: <input type="text" id="tarea_descripcion"></label>
+        <label>Fecha inicio: <input type="date" id="tarea_fecha_inicio"></label>
+        <label>Fecha fin: <input type="date" id="tarea_fecha_fin"></label>
+        <label>Fecha actualización: <input type="date" id="tarea_fecha_actualizacion"></label>
+        <label>Observación: <input type="text" id="tarea_observacion"></label>
+        <label>Avance (%): <input type="number" id="tarea_avance" min="0" max="100"></label>
+        <button type="submit">Crear Tarea</button>
+    </form>
+    <!-- Dropdown para filtrar tareas por Actividad -->
+    <label>Mostrar Tareas de Actividad:
+        <select id="tarea_actividad_filter">
+            <option value="">-- Seleccionar Actividad --</option>
+        </select>
+    </label>
+    <button id="loadTareas">Cargar Tareas</button>
+    <ul id="tareaList"></ul>
+
+    <!-- Formulario para editar tarea (oculto) -->
+    <div id="editTareaContainer" class="hidden">
+        <h3>Editar Tarea</h3>
+        <form id="editTareaForm">
+            <input type="hidden" id="edit_tarea_id">
+            <label>Actividad:
+                <select id="edit_tarea_actividad_select" required>
+                    <option value="">-- Seleccionar Actividad --</option>
+                </select>
+            </label>
+            <label>Responsable:
+                <select id="edit_tarea_responsable_select" required>
+                    <option value="">-- Seleccionar Responsable --</option>
+                </select>
+            </label>
+            <label>Nombre: <input type="text" id="edit_tarea_nombre" required></label>
+            <label>Descripción: <input type="text" id="edit_tarea_descripcion"></label>
+            <label>Fecha inicio: <input type="date" id="edit_tarea_fecha_inicio"></label>
+            <label>Fecha fin: <input type="date" id="edit_tarea_fecha_fin"></label>
+            <label>Fecha actualización: <input type="date" id="edit_tarea_fecha_actualizacion"></label>
+            <label>Observación: <input type="text" id="edit_tarea_observacion"></label>
+            <label>Avance (%): <input type="number" id="edit_tarea_avance" min="0" max="100"></label>
+            <button type="submit">Guardar Cambios</button>
+            <button type="button" onclick="cancelEditTarea()">Cancelar</button>
+        </form>
+    </div>
+</div>
